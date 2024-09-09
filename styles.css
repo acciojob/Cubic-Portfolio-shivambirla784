@@ -1,2 +1,47 @@
+/* Scene styling */
+.scene-1 {
+  width: 200px;
+  height: 200px;
+  perspective: 800px; /* Creates a 3D effect */
+  margin: 100px auto; /* Centers the scene */
+  position: relative;
+}
 
-/* Your CSS Code here. */
+/* Cube styling */
+.cube-1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  animation: rotateCube 10s infinite linear; /* Animation to rotate the cube */
+}
+
+/* Face styling */
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #000;
+}
+
+/* Distinct background colors for each face */
+.front  { background-color: #ff5733; transform: translateZ(50px); } /* Red */
+.back   { background-color: #33c3ff; transform: rotateY(180deg) translateZ(50px); } /* Blue */
+.left   { background-color: #33ff57; transform: rotateY(-90deg) translateZ(50px); } /* Green */
+.right  { background-color: #f1c40f; transform: rotateY(90deg) translateZ(50px); } /* Yellow */
+.top    { background-color: #8e44ad; transform: rotateX(90deg) translateZ(50px); } /* Purple */
+.bottom { background-color: #e74c3c; transform: rotateX(-90deg) translateZ(50px); } /* Orange */
+
+/* Animation for rotating the cube */
+@keyframes rotateCube {
+  0%   { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
